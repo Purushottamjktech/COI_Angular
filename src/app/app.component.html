@@ -1,21 +1,9 @@
-<!-- <h3>my name is purushottam kumar</h3> -->
-<!-- <app-server></app-server>
-<app-servers></app-servers> -->
-
+<app-header (featureSelected)="onNavigator($event)"></app-header>
 <div class="container">
-   <app-cockpit (serverCreated)="onServerAdded($event)"
-   (blueprintCreated)="onServerAdded($event)"></app-cockpit>
-    <hr>
-    <div class="row">
-      <div class="col-xs-12">
-       <app-servers *ngFor="let serverelement of serverElements"
-       [srvElement]="serverelement"> 
-       <p>
-        <strong *ngIf="serverelement.type === 'server'" style="color: gold">{{ serverelement.content }}</strong>
-        <em *ngIf="serverelement.type === 'blueprint'" >{{ serverelement.content }}</em>
-      </p>
-      </app-servers>
-      </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeature === 'Recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !=='Recipe'"></app-shopping-list>
     </div>
   </div>
-  
+</div>

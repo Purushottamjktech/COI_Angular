@@ -6,25 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements:any[] = ['abcd'];
+loadedFeature ='Recipe';
 
 
-
-  onServerAdded(serverData:{serverName:string,serverContent:string}) {
-    this.serverElements.push({
-      // type: 'server',
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    });
+  onNavigator(feature:string){
+this.loadedFeature=feature;
   }
-  
-  onAddBlueprint(blueprintData:{serverName:string,serverContent:string}) {
-    this.serverElements.push({
-      type: "blueprint",
-      name: blueprintData.serverName,
-      content: blueprintData.serverContent
-    });
-  }
-
 }

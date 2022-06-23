@@ -33,6 +33,11 @@ recipeSelected=new EventEmitter<Recipe>();
   getRecipe(){
     return this.recipes.slice();
   }
+
+  getToRecipe(index:number){
+    return this.recipes.slice()[index];
+  }
+
   addIngradientToShoppingList(ingredients:Ingredient[]){
     this._shoppingList.addOnIngredients(ingredients);
   }
